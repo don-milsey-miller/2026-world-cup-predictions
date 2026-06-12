@@ -53,6 +53,54 @@ Primary data source: [martj42/international_results](https://github.com/martj42/
 
 ## Local Setup
 
+### Easy Install
+
+Windows 11, from PowerShell:
+
+```powershell
+.\scripts\install_windows.ps1
+```
+
+Linux, from Bash:
+
+```bash
+chmod +x scripts/install_linux.sh
+./scripts/install_linux.sh
+```
+
+On a fresh Ubuntu, Debian, RedHat, Fedora, CentOS, or Rocky Linux machine, include
+`--system-deps` so the script installs Python/build prerequisites with the native
+package manager:
+
+```bash
+./scripts/install_linux.sh --system-deps
+```
+
+Useful options for both installers:
+
+| Option | Purpose |
+| --- | --- |
+| `--dev` / `-Dev` | Install test and lint tools. |
+| `--download-data` / `-DownloadData` | Refresh `data/raw` from the configured source. |
+| `--train-model` / `-TrainModel` | Retrain `artifacts/model.joblib`. |
+| `--run-checks` / `-RunChecks` | Run formatting, linting, and tests after install. |
+
+After installation, start the frontend/API:
+
+```powershell
+.\.venv\Scripts\python -m uvicorn worldcup_predictor.app:app --reload
+```
+
+On Linux:
+
+```bash
+.venv/bin/python -m uvicorn worldcup_predictor.app:app --reload
+```
+
+Open `http://127.0.0.1:8000`.
+
+### Manual Setup
+
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\python -m pip install -e .
