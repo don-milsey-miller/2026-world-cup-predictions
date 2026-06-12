@@ -35,12 +35,13 @@ scores become available only after the upstream data source adds match results.
 Generated on **June 12, 2026** with model `hgb_iter80_lr0.03_l20`, trained on
 completed matches through **June 11, 2026**. Probabilities are informational and
 are not betting advice. Daily predictions should be generated the night before
-the scheduled matches.
+the scheduled matches. After final scores are known, update `Winner` and mark
+the model result as `✅` for correct or `❌` for incorrect.
 
-| Match | Venue | Win A | Draw | Win B | Model lean |
-| --- | --- | ---: | ---: | ---: | --- |
-| Canada vs Bosnia and Herzegovina | Toronto, Canada | 66.2% | 23.8% | 10.0% | Canada |
-| United States vs Paraguay | Inglewood, United States | 48.6% | 31.3% | 20.1% | United States |
+| Match | Venue | Win A | Draw | Win B | Model lean | Winner | Correct? |
+| --- | --- | ---: | ---: | ---: | --- | --- | --- |
+| Canada vs Bosnia and Herzegovina | Toronto, Canada | 66.2% | 23.8% | 10.0% | Canada | TBD | Pending |
+| United States vs Paraguay | Inglewood, United States | 48.6% | 31.3% | 20.1% | United States | TBD | Pending |
 
 ## Data
 
