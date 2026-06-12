@@ -1,0 +1,3 @@
+generated_at	model_name	model_latest_match_date	team_a	team_b	match_date	tournament	neutral	team_a_win_probability	draw_probability	team_b_win_probability	predicted_outcome	predicted_winner	actual_team_a_score	actual_team_b_score	actual_outcome
+2026-06-12T10:59:39.8830002Z	hist_gradient_boosting	2026-06-10	Canada	Bosnia and Herzegovina	2026-06-12	FIFA World Cup	False	0.691800053454	0.213619612496	0.094580334050	team_a_win	Canada			
+2026-06-12T11:18:01.265251+00:00	hist_gradient_boosting	2026-06-11	United States	Paraguay	2026-06-12	FIFA World Cup	False	0.473733410627	0.332873548203	0.193393041170	team_a_win	United States			

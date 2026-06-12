@@ -1,0 +1,18 @@
+{
+  "hgb_iter80_lr0.03_l20": {
+    "log_loss": 0.8841561230588201,
+    "accuracy": 0.5943100131618912,
+    "brier_multiclass": 0.17312464335820396,
+    "mean_confidence": 0.6042031108003746,
+    "expected_calibration_error": 0.010107079852218507
+  },
+  "selected_model": "hgb_iter80_lr0.03_l20",
+  "selection_metric": "log_loss",
+  "training_rows": 39529,
+  "validation_rows": 9877,
+  "train_start_date": "1872-11-30",
+  "train_end_date": "2016-03-24",
+  "validation_start_date": "2016-03-25",
+  "validation_end_date": "2026-06-11",
+  "latest_match_date": "2026-06-11"
+}

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>World Cup Match Predictor</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace">
+        <div class="panel controls">
+          <h1>World Cup Match Predictor</h1>
+          <form id="prediction-form">
+            <label>
+              Team A
+              <input id="team-a" list="teams" autocomplete="off" placeholder="Brazil" required />
+            </label>
+            <label>
+              Team B
+              <input id="team-b" list="teams" autocomplete="off" placeholder="Argentina" required />
+            </label>
+            <datalist id="teams"></datalist>
+            <label>
+              Tournament
+              <select id="tournament">
+                <option>FIFA World Cup</option>
+                <option>FIFA World Cup qualification</option>
+                <option>Friendly</option>
+                <option>CONCACAF Gold Cup</option>
+                <option>Copa America</option>
+                <option>UEFA Euro</option>
+              </select>
+            </label>
+            <label>
+              Match date
+              <input id="match-date" type="date" required />
+            </label>
+            <label class="toggle">
+              <input id="neutral" type="checkbox" checked />
+              Neutral venue
+            </label>
+            <button type="submit">Predict</button>
+          </form>
+          <p class="caveat">Informational model output based on historical international results. Not betting advice.</p>
+        </div>
+        <div class="panel results" id="results">
+          <div class="empty">Choose two teams to generate a prediction.</div>
+        </div>
+      </section>
+    </main>
+    <script src="/assets/app.js"></script>
+  </body>
+</html>
