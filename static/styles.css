@@ -82,9 +82,13 @@ select {
 
 .field-note {
   margin: -10px 0 0 28px;
+}
+
+.field-note,
+.caveat {
   color: #65746a;
   font-size: 13px;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 button {
@@ -97,9 +101,6 @@ button {
 
 .caveat {
   margin: 18px 0 0;
-  color: #65746a;
-  font-size: 13px;
-  line-height: 1.45;
 }
 
 .results {
