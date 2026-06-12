@@ -2,6 +2,7 @@ param(
     [switch]$All,
     [switch]$Data,
     [switch]$Artifacts,
+    [switch]$ForceAcl,
     [switch]$DryRun
 )
 
@@ -31,19 +32,65 @@ function Remove-ProjectPath {
             Write-Host "Removing $RelativePath"
             try {
                 Get-ChildItem -LiteralPath $FullTarget -Recurse -Force -ErrorAction SilentlyContinue |
-                    ForEach-Object { $_.Attributes = "Normal" }
-                if (Test-Path -LiteralPath $FullTarget -PathType Container) {
-                    (Get-Item -LiteralPath $FullTarget -Force).Attributes = "Directory"
-                } else {
-                    (Get-Item -LiteralPath $FullTarget -Force).Attributes = "Normal"
+                    ForEach-Object {
+                        try {
+                            $_.Attributes = "Normal"
+                        } catch {
+                            Write-Verbose "Could not reset attributes for $($_.FullName)"
+                        }
+                    }
+                try {
+                    if (Test-Path -LiteralPath $FullTarget -PathType Container) {
+                        (Get-Item -LiteralPath $FullTarget -Force).Attributes = "Directory"
+                    } else {
+                        (Get-Item -LiteralPath $FullTarget -Force).Attributes = "Normal"
+                    }
+                } catch {
+                    Write-Verbose "Could not reset attributes for $FullTarget"
                 }
                 Remove-Item -LiteralPath $FullTarget -Recurse -Force -ErrorAction Stop
             } catch {
-                Write-Warning "Could not remove ${RelativePath}: $($_.Exception.Message)"
-                $script:CleanupFailures += $RelativePath
+                if ($ForceAcl -and (Test-Path -LiteralPath $FullTarget -PathType Container)) {
+                    try {
+                        Repair-PathAccess $FullTarget
+                        Remove-Item -LiteralPath $FullTarget -Recurse -Force -ErrorAction Stop
+                        return
+                    } catch {
+                        Write-Warning "Could not remove ${RelativePath}: $($_.Exception.Message)"
+                        $script:CleanupFailures += $RelativePath
+                    }
+                } else {
+                    Write-Warning "Could not remove ${RelativePath}: $($_.Exception.Message)"
+                    $script:CleanupFailures += $RelativePath
+                }
             }
         }
     }
+}
+
+function Repair-PathAccess {
+    param([string]$FullTarget)
+
+    if (-not (Test-IsAdministrator)) {
+        Write-Warning "ACL repair may require running PowerShell as Administrator."
+    }
+
+    Write-Host "Repairing access for $FullTarget"
+    & takeown.exe /F $FullTarget /R /D Y 2>$null | Out-Null
+    if ($LASTEXITCODE -ne 0) {
+        throw "takeown.exe could not take ownership. Run PowerShell as Administrator and retry."
+    }
+    $GrantRule = "$($env:USERNAME):(OI)(CI)F"
+    & icacls.exe $FullTarget /grant $GrantRule /T /C 2>$null | Out-Null
+    if ($LASTEXITCODE -ne 0) {
+        throw "icacls.exe could not grant access. Run PowerShell as Administrator and retry."
+    }
+}
+
+function Test-IsAdministrator {
+    $Identity = [Security.Principal.WindowsIdentity]::GetCurrent()
+    $Principal = [Security.Principal.WindowsPrincipal]::new($Identity)
+    return $Principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 }
 
 function Get-RelativeProjectPath {

@@ -124,6 +124,7 @@ Cleanup options:
 | `--dry-run` / `-DryRun` | Print what would be removed without deleting anything. |
 | `--data` / `-Data` | Also remove ignored raw data, `results.tsv`, and `*.log` files. |
 | `--artifacts` / `-Artifacts` | Also remove generated model/research artifacts while keeping `.gitkeep`. |
+| `-ForceAcl` | Windows only: repair ownership/ACLs for stubborn cleanup directories before retrying; may require Administrator PowerShell. |
 | `--all` / `-All` | Run default cleanup plus data/log and artifact cleanup. |
 
 ### Manual Setup
