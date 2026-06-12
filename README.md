@@ -30,6 +30,17 @@ Tournament phase dates:
 The local dataset currently includes the 2026 group-stage fixture rows. Completed
 scores become available only after the upstream data source adds match results.
 
+## Today's World Cup Predictions
+
+Generated on **June 12, 2026** with model `hgb_iter80_lr0.03_l20`, trained on
+completed matches through **June 11, 2026**. Probabilities are informational and
+are not betting advice.
+
+| Match | Venue | Win A | Draw | Win B | Model lean |
+| --- | --- | ---: | ---: | ---: | --- |
+| Canada vs Bosnia and Herzegovina | Toronto, Canada | 66.2% | 23.8% | 10.0% | Canada |
+| United States vs Paraguay | Inglewood, United States | 48.6% | 31.3% | 20.1% | United States |
+
 ## Data
 
 Primary data source: [martj42/international_results](https://github.com/martj42/international_results), a CC0 dataset of men’s full international football results. The training pipeline uses `results.csv`; shootout data is downloaded for future extensions but v1 predicts the full-time/extra-time result class: team A win, draw, or team B win.
