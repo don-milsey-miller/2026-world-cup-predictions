@@ -30,11 +30,12 @@ Tournament phase dates:
 The local dataset currently includes the 2026 group-stage fixture rows. Completed
 scores become available only after the upstream data source adds match results.
 
-## Today's World Cup Predictions
+## World Cup Predictions
 
 Generated on **June 12, 2026** with model `hgb_iter80_lr0.03_l20`, trained on
 completed matches through **June 11, 2026**. Probabilities are informational and
-are not betting advice.
+are not betting advice. Daily predictions should be generated the night before
+the scheduled matches.
 
 | Match | Venue | Win A | Draw | Win B | Model lean |
 | --- | --- | ---: | ---: | ---: | --- |
