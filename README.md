@@ -99,6 +99,33 @@ On Linux:
 
 Open `http://127.0.0.1:8000`.
 
+### Cleanup
+
+Default cleanup removes the local virtual environment, Python caches, pytest cache,
+and build metadata. It does not remove source code, committed model artifacts, raw
+data, or prediction logs.
+
+Windows 11, from PowerShell:
+
+```powershell
+.\scripts\cleanup_windows.ps1
+```
+
+Linux, from Bash:
+
+```bash
+./scripts/cleanup_linux.sh
+```
+
+Cleanup options:
+
+| Option | Purpose |
+| --- | --- |
+| `--dry-run` / `-DryRun` | Print what would be removed without deleting anything. |
+| `--data` / `-Data` | Also remove ignored raw data, `results.tsv`, and `*.log` files. |
+| `--artifacts` / `-Artifacts` | Also remove generated model/research artifacts while keeping `.gitkeep`. |
+| `--all` / `-All` | Run default cleanup plus data/log and artifact cleanup. |
+
 ### Manual Setup
 
 ```powershell
