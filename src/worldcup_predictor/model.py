@@ -1,3 +1,5 @@
+"""Model training, selection, persistence, and probability helpers."""
+
 from __future__ import annotations
 
 import os
@@ -17,13 +19,14 @@ from sklearn.preprocessing import StandardScaler
 
 from worldcup_predictor.data import team_names
 from worldcup_predictor.evaluation import evaluate_probabilities
-from worldcup_predictor.features import FEATURE_COLUMNS, TeamState, build_training_frame
+from worldcup_predictor.features import FEATURE_COLUMNS, build_training_frame
 
 LABELS = ["draw", "team_a_win", "team_b_win"]
 SELECTION_METRIC = "log_loss"
 
 
 def train_and_select(matches: pd.DataFrame) -> tuple[dict[str, Any], dict[str, Any]]:
+    """Train candidate models and select the best validation log-loss model."""
     feature_frame, states = build_training_frame(matches)
     if len(feature_frame) < 50:
         raise ValueError("Need at least 50 matches to train a useful model.")
@@ -66,8 +69,8 @@ def train_and_select(matches: pd.DataFrame) -> tuple[dict[str, Any], dict[str, A
     }
     metrics["selected_model"] = best_name
     metrics["selection_metric"] = SELECTION_METRIC
-    metrics["training_rows"] = int(len(train))
-    metrics["validation_rows"] = int(len(valid))
+    metrics["training_rows"] = len(train)
+    metrics["validation_rows"] = len(valid)
     metrics["train_start_date"] = str(train["date"].min().date())
     metrics["train_end_date"] = str(train["date"].max().date())
     metrics["validation_start_date"] = str(valid["date"].min().date())
@@ -77,6 +80,7 @@ def train_and_select(matches: pd.DataFrame) -> tuple[dict[str, Any], dict[str, A
 
 
 def candidate_models() -> dict[str, Any]:
+    """Return the standard candidate model set for training."""
     logistic = Pipeline(
         [
             ("scale", StandardScaler()),
@@ -118,15 +122,18 @@ def candidate_models() -> dict[str, Any]:
 
 
 def save_artifact(artifact: dict[str, Any], path: Path) -> None:
+    """Serialize a trained model artifact."""
     path.parent.mkdir(parents=True, exist_ok=True)
     joblib.dump(artifact, path)
 
 
 def load_artifact(path: Path) -> dict[str, Any]:
+    """Load a serialized model artifact."""
     return joblib.load(path)
 
 
 def predict_probabilities(model: Any, features: pd.DataFrame) -> dict[str, float]:
+    """Predict probabilities aligned to the application label order."""
     probabilities = _aligned_probabilities(model, features)[0]
     return {label: float(probabilities[index]) for index, label in enumerate(LABELS)}
 
@@ -137,4 +144,6 @@ def _aligned_probabilities(model: Any, features: pd.DataFrame):
     aligned = []
     for label in LABELS:
         aligned.append(raw[:, classes.index(label)] if label in classes else 0.0)
-    return pd.DataFrame({label: values for label, values in zip(LABELS, aligned)}).to_numpy()
+    return pd.DataFrame(
+        {label: values for label, values in zip(LABELS, aligned, strict=True)}
+    ).to_numpy()

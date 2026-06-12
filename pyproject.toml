@@ -18,7 +18,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=8.0", "httpx>=0.27"]
+dev = ["pytest>=8.0", "httpx>=0.27", "ruff>=0.8.0"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -26,3 +26,35 @@ where = ["src"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = [
+    "B",
+    "D",
+    "E",
+    "F",
+    "I",
+    "N",
+    "RUF",
+    "SIM",
+    "UP",
+]
+ignore = [
+    "D203",
+    "D213",
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/chart_training_progress.py" = ["D", "E501"]
+"scripts/**/*.py" = ["D"]
+"tests/**/*.py" = ["D"]

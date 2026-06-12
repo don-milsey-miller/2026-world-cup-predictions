@@ -44,4 +44,4 @@ def test_clean_results_drops_invalid_and_duplicates():
     cleaned = clean_results(raw)
     assert len(cleaned) == 1
     assert cleaned.iloc[0]["home_team"] == "A"
-    assert cleaned.iloc[0]["neutral"] == False
+    assert not cleaned.iloc[0]["neutral"]

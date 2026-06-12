@@ -35,7 +35,9 @@ def main() -> None:
         append_result(tag, description, status, metrics, elapsed)
 
 
-def append_result(tag: str, description: str, status: str, metrics: dict, elapsed_seconds: float) -> None:
+def append_result(
+    tag: str, description: str, status: str, metrics: dict, elapsed_seconds: float
+) -> None:
     commit = current_commit()
     selected = metrics.get("selected_model", "")
     selected_metrics = metrics.get(selected, {}) if selected else {}

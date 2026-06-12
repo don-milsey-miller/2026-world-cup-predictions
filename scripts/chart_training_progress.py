@@ -138,7 +138,10 @@ def write_chart(runs: list[dict[str, str | float | int]]) -> None:
     y_min = low - padding
     y_max = high + padding
 
-    points = [(x_for(i + 1, len(runs), left, plot_width), y_for(loss, y_min, y_max, top, plot_height)) for i, loss in enumerate(losses)]
+    points = [
+        (x_for(i + 1, len(runs), left, plot_width), y_for(loss, y_min, y_max, top, plot_height))
+        for i, loss in enumerate(losses)
+    ]
     best_points = [
         (x_for(i + 1, len(runs), left, plot_width), y_for(best, y_min, y_max, top, plot_height))
         for i, best in enumerate(bests)
@@ -156,8 +159,12 @@ def write_chart(runs: list[dict[str, str | float | int]]) -> None:
 
     for tick in y_ticks:
         y = y_for(tick, y_min, y_max, top, plot_height)
-        lines.append(f'<line x1="{left}" y1="{y:.1f}" x2="{width - right}" y2="{y:.1f}" stroke="#d6dce2" stroke-width="1"/>')
-        lines.append(f'<text x="{left - 14}" y="{y + 4:.1f}" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#52616f">{tick:.4f}</text>')
+        lines.append(
+            f'<line x1="{left}" y1="{y:.1f}" x2="{width - right}" y2="{y:.1f}" stroke="#d6dce2" stroke-width="1"/>'
+        )
+        lines.append(
+            f'<text x="{left - 14}" y="{y + 4:.1f}" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#52616f">{tick:.4f}</text>'
+        )
 
     lines.extend(
         [
@@ -172,11 +179,13 @@ def write_chart(runs: list[dict[str, str | float | int]]) -> None:
         lines.append(polyline(points, "#8aa1b4", 2, "none"))
         lines.append(polyline(best_points, "#16a34a", 3, "none"))
 
-    for point, run in zip(points, runs):
+    for point, run in zip(points, runs, strict=True):
         color = "#2563eb" if run["source"] == "experiment" else "#8aa1b4"
         if run["status"] in {"promote", "would_promote"}:
             color = "#16a34a"
-        lines.append(f'<circle cx="{point[0]:.1f}" cy="{point[1]:.1f}" r="4" fill="{color}"><title>{tooltip(run)}</title></circle>')
+        lines.append(
+            f'<circle cx="{point[0]:.1f}" cy="{point[1]:.1f}" r="4" fill="{color}"><title>{tooltip(run)}</title></circle>'
+        )
 
     last_best = min(runs, key=lambda run: float(run["cumulative_best_log_loss"]))
     best_value = float(runs[-1]["cumulative_best_log_loss"])

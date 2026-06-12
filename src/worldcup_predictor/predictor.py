@@ -1,3 +1,5 @@
+"""Runtime prediction service backed by a trained model artifact."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -11,6 +13,8 @@ from worldcup_predictor.model import load_artifact, predict_probabilities
 
 @dataclass
 class PredictionResult:
+    """Prediction probabilities and explanatory signals."""
+
     team_a_win_probability: float
     draw_probability: float
     team_b_win_probability: float
@@ -20,14 +24,18 @@ class PredictionResult:
 
 
 class MatchPredictor:
+    """Generate predictions from a persisted model artifact."""
+
     def __init__(self, artifact: dict):
+        """Initialize the predictor from an artifact dictionary."""
         self.artifact = artifact
         self.model = artifact["model"]
         self.teams = artifact["teams"]
         self.states = artifact["states"]
 
     @classmethod
-    def from_path(cls, path: Path) -> "MatchPredictor":
+    def from_path(cls, path: Path) -> MatchPredictor:
+        """Load a predictor from a serialized artifact path."""
         return cls(load_artifact(path))
 
     def predict(
@@ -39,6 +47,7 @@ class MatchPredictor:
         match_date: str,
         tournament: str,
     ) -> PredictionResult:
+        """Predict match outcome probabilities for two teams."""
         self._validate_teams(team_a, team_b)
         features = matchup_features(
             team_a=team_a,
@@ -52,10 +61,7 @@ class MatchPredictor:
         frame = pd.DataFrame([{column: features[column] for column in FEATURE_COLUMNS}])
         probabilities = predict_probabilities(self.model, frame)
         outcome = max(probabilities, key=probabilities.get)
-        if probabilities["team_a_win"] >= probabilities["team_b_win"]:
-            winner = team_a
-        else:
-            winner = team_b
+        winner = team_a if probabilities["team_a_win"] >= probabilities["team_b_win"] else team_b
         return PredictionResult(
             team_a_win_probability=probabilities["team_a_win"],
             draw_probability=probabilities["draw"],

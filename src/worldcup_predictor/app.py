@@ -1,3 +1,5 @@
+"""FastAPI application for serving match predictions."""
+
 from __future__ import annotations
 
 import csv
@@ -10,7 +12,7 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from worldcup_predictor.predictor import MatchPredictor
+from worldcup_predictor.predictor import MatchPredictor, PredictionResult
 
 ROOT = Path(__file__).resolve().parents[2]
 ARTIFACT_PATH = ROOT / "artifacts" / "model.joblib"
@@ -37,6 +39,8 @@ PREDICTION_LOG_FIELDS = [
 
 
 class PredictionRequest(BaseModel):
+    """Request body for a match prediction."""
+
     team_a: str = Field(min_length=1)
     team_b: str = Field(min_length=1)
     neutral: bool = True
@@ -46,6 +50,7 @@ class PredictionRequest(BaseModel):
 
 @asynccontextmanager
 async def lifespan(_: FastAPI):
+    """Load the model artifact during application startup."""
     load_model()
     yield
 
@@ -55,6 +60,7 @@ predictor: MatchPredictor | None = None
 
 
 def load_model() -> None:
+    """Load the trained prediction artifact if it exists."""
     global predictor
     if ARTIFACT_PATH.exists():
         predictor = MatchPredictor.from_path(ARTIFACT_PATH)
@@ -62,17 +68,20 @@ def load_model() -> None:
 
 @app.get("/health")
 def health() -> dict[str, str | bool]:
+    """Return service health and model-load state."""
     return {"status": "ok", "model_loaded": predictor is not None}
 
 
 @app.get("/api/teams")
 def teams() -> dict[str, list[str]]:
+    """Return known team names from the model artifact."""
     require_predictor()
     return {"teams": predictor.teams}  # type: ignore[union-attr]
 
 
 @app.post("/api/predict")
 def predict(request: PredictionRequest) -> dict:
+    """Return a prediction for a pair of teams."""
     service = require_predictor()
     try:
         result = service.predict(
@@ -94,10 +103,12 @@ if STATIC_DIR.exists():
 
 @app.get("/")
 def index() -> FileResponse:
+    """Serve the single-page frontend."""
     return FileResponse(STATIC_DIR / "index.html")
 
 
 def require_predictor() -> MatchPredictor:
+    """Return the loaded predictor or raise a service-unavailable error."""
     if predictor is None:
         raise HTTPException(
             status_code=503,
@@ -106,7 +117,10 @@ def require_predictor() -> MatchPredictor:
     return predictor
 
 
-def log_prediction(request: PredictionRequest, result, service: MatchPredictor) -> None:
+def log_prediction(
+    request: PredictionRequest, result: PredictionResult, service: MatchPredictor
+) -> None:
+    """Append a successful prediction to the comparison log."""
     PREDICTION_LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
     write_header = not PREDICTION_LOG_PATH.exists()
     row = {

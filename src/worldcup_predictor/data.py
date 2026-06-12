@@ -1,3 +1,5 @@
+"""Data download and cleaning utilities for international results."""
+
 from __future__ import annotations
 
 from pathlib import Path
@@ -6,7 +8,9 @@ from urllib.request import urlretrieve
 import pandas as pd
 
 RESULTS_URL = "https://raw.githubusercontent.com/martj42/international_results/master/results.csv"
-SHOOTOUTS_URL = "https://raw.githubusercontent.com/martj42/international_results/master/shootouts.csv"
+SHOOTOUTS_URL = (
+    "https://raw.githubusercontent.com/martj42/international_results/master/shootouts.csv"
+)
 
 REQUIRED_RESULT_COLUMNS = {
     "date",
@@ -22,12 +26,14 @@ REQUIRED_RESULT_COLUMNS = {
 
 
 def download_data(raw_dir: Path) -> None:
+    """Download raw match and shootout data into a directory."""
     raw_dir.mkdir(parents=True, exist_ok=True)
     urlretrieve(RESULTS_URL, raw_dir / "results.csv")
     urlretrieve(SHOOTOUTS_URL, raw_dir / "shootouts.csv")
 
 
 def load_results(path: Path) -> pd.DataFrame:
+    """Load and validate completed match results from a CSV file."""
     frame = pd.read_csv(path)
     missing = REQUIRED_RESULT_COLUMNS - set(frame.columns)
     if missing:
@@ -36,6 +42,7 @@ def load_results(path: Path) -> pd.DataFrame:
 
 
 def clean_results(frame: pd.DataFrame) -> pd.DataFrame:
+    """Normalize raw results and drop rows that cannot train the model."""
     cleaned = frame.copy()
     cleaned["date"] = pd.to_datetime(cleaned["date"], errors="coerce")
     cleaned["home_score"] = pd.to_numeric(cleaned["home_score"], errors="coerce")
@@ -62,5 +69,6 @@ def _coerce_bool(value: object) -> bool:
 
 
 def team_names(frame: pd.DataFrame) -> list[str]:
+    """Return sorted unique team names from match results."""
     teams = set(frame["home_team"].dropna()) | set(frame["away_team"].dropna())
     return sorted(str(team) for team in teams)

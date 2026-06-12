@@ -1,5 +1,3 @@
-from pathlib import Path
-
 import pytest
 from fastapi.testclient import TestClient
 from sklearn.dummy import DummyClassifier
@@ -41,11 +39,18 @@ def test_predict_rejects_same_team(client):
 def test_predict_probabilities_sum_to_one(client):
     response = client.post(
         "/api/predict",
-        json={"team_a": "Brazil", "team_b": "Argentina", "neutral": True, "match_date": "2026-06-11"},
+        json={
+            "team_a": "Brazil",
+            "team_b": "Argentina",
+            "neutral": True,
+            "match_date": "2026-06-11",
+        },
     )
     assert response.status_code == 200
     data = response.json()
-    total = data["team_a_win_probability"] + data["draw_probability"] + data["team_b_win_probability"]
+    total = (
+        data["team_a_win_probability"] + data["draw_probability"] + data["team_b_win_probability"]
+    )
     assert total == pytest.approx(1.0)
 
 
@@ -65,7 +70,7 @@ def test_predict_logs_request(client):
     log_lines = app_module.PREDICTION_LOG_PATH.read_text(encoding="utf-8").splitlines()
     assert len(log_lines) == 2
     header = log_lines[0].split("\t")
-    row = dict(zip(header, log_lines[1].split("\t")))
+    row = dict(zip(header, log_lines[1].split("\t"), strict=True))
     assert row["team_a"] == "Brazil"
     assert row["team_b"] == "Argentina"
     assert row["model_name"] == "dummy"

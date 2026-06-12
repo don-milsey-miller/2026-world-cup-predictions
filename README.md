@@ -20,6 +20,17 @@ python -m venv .venv
 
 Open `http://127.0.0.1:8000`.
 
+## Quality Checks
+
+This project enforces Python linting and formatting with Ruff using Google-style docstring rules:
+
+```powershell
+python -m pip install -e ".[dev]"
+ruff format --check .
+ruff check .
+python -m pytest
+```
+
 ## API
 
 ```http

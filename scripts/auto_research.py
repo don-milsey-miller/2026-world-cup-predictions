@@ -11,8 +11,13 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
+from run_experiment import current_commit
 from sklearn.calibration import CalibratedClassifierCV
-from sklearn.ensemble import ExtraTreesClassifier, HistGradientBoostingClassifier, RandomForestClassifier
+from sklearn.ensemble import (
+    ExtraTreesClassifier,
+    HistGradientBoostingClassifier,
+    RandomForestClassifier,
+)
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import TimeSeriesSplit
 from sklearn.pipeline import Pipeline
@@ -22,7 +27,6 @@ from worldcup_predictor.data import load_results, team_names
 from worldcup_predictor.evaluation import evaluate_probabilities
 from worldcup_predictor.features import FEATURE_COLUMNS, build_training_frame
 from worldcup_predictor.model import LABELS, SELECTION_METRIC, _aligned_probabilities, save_artifact
-from run_experiment import current_commit
 
 SEARCH_LOG_PATH = Path("artifacts/autoresearch.tsv")
 METRICS_PATH = Path("artifacts/metrics.json")
@@ -76,8 +80,8 @@ def main() -> None:
                     name: model_metrics,
                     "selected_model": name,
                     "selection_metric": SELECTION_METRIC,
-                    "training_rows": int(len(train)),
-                    "validation_rows": int(len(valid)),
+                    "training_rows": len(train),
+                    "validation_rows": len(valid),
                     "train_start_date": str(train["date"].min().date()),
                     "train_end_date": str(train["date"].max().date()),
                     "validation_start_date": str(valid["date"].min().date()),
@@ -99,11 +103,15 @@ def main() -> None:
                         }
                         save_artifact(artifact, MODEL_PATH)
                         METRICS_PATH.write_text(json.dumps(metrics, indent=2), encoding="utf-8")
-                append_search_result(name, description, status, metrics, time.perf_counter() - run_started, cycle)
+                append_search_result(
+                    name, description, status, metrics, time.perf_counter() - run_started, cycle
+                )
                 print(f"{status}: {name} {score:.6f}")
             except Exception as exc:
                 metrics = {"error": str(exc), "selected_model": name}
-                append_search_result(name, description, "crash", metrics, time.perf_counter() - run_started, cycle)
+                append_search_result(
+                    name, description, "crash", metrics, time.perf_counter() - run_started, cycle
+                )
                 print(f"crash: {name}: {exc}")
 
         if time.time() < deadline and candidate_index < len(candidates):
@@ -122,7 +130,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--interval-minutes", type=float, default=5.0)
     parser.add_argument("--max-candidates-per-cycle", type=int, default=4)
     parser.add_argument("--min-improvement", type=float, default=0.0)
-    parser.add_argument("--no-promote", action="store_true", help="Log results without replacing artifacts.")
+    parser.add_argument(
+        "--no-promote", action="store_true", help="Log results without replacing artifacts."
+    )
     return parser.parse_args()
 
 
@@ -151,16 +161,21 @@ def candidate_factories():
         for learning_rate in [0.03, 0.045, 0.06, 0.08]:
             for l2 in [0.0, 0.02, 0.08]:
                 name = f"hgb_iter{max_iter}_lr{learning_rate:g}_l2{l2:g}"
-                description = f"HistGradientBoosting max_iter={max_iter} learning_rate={learning_rate} l2={l2}"
+                description = (
+                    f"HistGradientBoosting max_iter={max_iter} "
+                    f"learning_rate={learning_rate} l2={l2}"
+                )
                 candidates.append(
                     (
                         name,
                         description,
-                        lambda max_iter=max_iter, learning_rate=learning_rate, l2=l2: HistGradientBoostingClassifier(
-                            max_iter=max_iter,
-                            learning_rate=learning_rate,
-                            l2_regularization=l2,
-                            random_state=42,
+                        lambda max_iter=max_iter, learning_rate=learning_rate, l2=l2: (
+                            HistGradientBoostingClassifier(
+                                max_iter=max_iter,
+                                learning_rate=learning_rate,
+                                l2_regularization=l2,
+                                random_state=42,
+                            )
                         ),
                     )
                 )
@@ -212,7 +227,10 @@ def candidate_factories():
                 lambda c_value=c_value: Pipeline(
                     [
                         ("scale", StandardScaler()),
-                        ("model", LogisticRegression(max_iter=1500, class_weight="balanced", C=c_value)),
+                        (
+                            "model",
+                            LogisticRegression(max_iter=1500, class_weight="balanced", C=c_value),
+                        ),
                     ]
                 ),
             )
