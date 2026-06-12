@@ -4,6 +4,10 @@ Predict men’s senior international soccer match outcomes from two team names. 
 
 The predictions are informational and are not betting advice.
 
+## UI Preview
+
+![World Cup Match Predictor UI](media/images/ui_001.png)
+
 ## 2026 World Cup Schedule
 
 The FIFA World Cup 2026 runs from **June 11 to July 19, 2026**, across Canada,
