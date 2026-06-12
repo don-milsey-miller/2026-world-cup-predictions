@@ -4,6 +4,32 @@ Predict men’s senior international soccer match outcomes from two team names. 
 
 The predictions are informational and are not betting advice.
 
+## 2026 World Cup Schedule
+
+The FIFA World Cup 2026 runs from **June 11 to July 19, 2026**, across Canada,
+Mexico, and the United States. FIFA lists **104 matches**: 72 group-stage matches
+and 32 knockout matches.
+
+Official schedule sources:
+
+- [FIFA match schedule and fixtures](https://www.fifa.com/en/articles/match-schedule-fixtures-results-teams-stadiums)
+- [FIFA match schedule PDF](https://digitalhub.fifa.com/m/1be9ce37eb98fcc5/original/FWC26-Match-Schedule_English.pdf)
+
+Tournament phase dates:
+
+| Phase | Dates |
+| --- | --- |
+| Group stage | June 11-27, 2026 |
+| Round of 32 | June 28-July 3, 2026 |
+| Round of 16 | July 4-7, 2026 |
+| Quarter-finals | July 9-11, 2026 |
+| Semi-finals | July 14-15, 2026 |
+| Third-place match | July 18, 2026 |
+| Final | July 19, 2026 |
+
+The local dataset currently includes the 2026 group-stage fixture rows. Completed
+scores become available only after the upstream data source adds match results.
+
 ## Data
 
 Primary data source: [martj42/international_results](https://github.com/martj42/international_results), a CC0 dataset of men’s full international football results. The training pipeline uses `results.csv`; shootout data is downloaded for future extensions but v1 predicts the full-time/extra-time result class: team A win, draw, or team B win.
