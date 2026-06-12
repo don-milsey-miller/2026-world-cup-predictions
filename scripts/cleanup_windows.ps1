@@ -7,6 +7,7 @@ param(
 
 $ErrorActionPreference = "Stop"
 $ProjectRoot = Resolve-Path (Join-Path $PSScriptRoot "..")
+$script:CleanupFailures = @()
 
 function Remove-ProjectPath {
     param([string]$RelativePath)
@@ -28,7 +29,19 @@ function Remove-ProjectPath {
             Write-Host "Would remove $RelativePath"
         } else {
             Write-Host "Removing $RelativePath"
-            Remove-Item -LiteralPath $FullTarget -Recurse -Force
+            try {
+                Get-ChildItem -LiteralPath $FullTarget -Recurse -Force -ErrorAction SilentlyContinue |
+                    ForEach-Object { $_.Attributes = "Normal" }
+                if (Test-Path -LiteralPath $FullTarget -PathType Container) {
+                    (Get-Item -LiteralPath $FullTarget -Force).Attributes = "Directory"
+                } else {
+                    (Get-Item -LiteralPath $FullTarget -Force).Attributes = "Normal"
+                }
+                Remove-Item -LiteralPath $FullTarget -Recurse -Force -ErrorAction Stop
+            } catch {
+                Write-Warning "Could not remove ${RelativePath}: $($_.Exception.Message)"
+                $script:CleanupFailures += $RelativePath
+            }
         }
     }
 }
@@ -92,5 +105,13 @@ if ($All -or $Artifacts) {
 if ($DryRun) {
     Write-Host "Dry run complete."
 } else {
-    Write-Host "Cleanup complete."
+    if ($script:CleanupFailures.Count -gt 0) {
+        Write-Warning "Cleanup completed with $($script:CleanupFailures.Count) item(s) left behind."
+        Write-Warning "Close terminals/editors using these paths and rerun cleanup:"
+        foreach ($Failure in $script:CleanupFailures) {
+            Write-Warning "  $Failure"
+        }
+    } else {
+        Write-Host "Cleanup complete."
+    }
 }
