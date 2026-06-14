@@ -55,11 +55,14 @@ the model result as correct or incorrect.
 
 | Match | Win A | Draw | Win B | Model lean | Winner | Correct? |
 | --- | ---: | ---: | ---: | --- | --- | --- |
-| Australia vs Türkiye | 27.7% | 29.1% | 43.1% | Türkiye | TBD | Pending |
 | Germany vs Curaçao | 90.3% | 7.2% | 2.5% | Germany | TBD | Pending |
 | Netherlands vs Japan | 35.4% | 30.1% | 34.4% | Netherlands | TBD | Pending |
 | Ivory Coast vs Ecuador | 22.3% | 29.1% | 48.6% | Ecuador | TBD | Pending |
 | Sweden vs Tunisia | 52.0% | 25.7% | 22.3% | Sweden | TBD | Pending |
+
+## Model Accuracy
+
+Current accuracy on completed tracked predictions: **25.0%** (1 correct out of 4).
 
 ## Data
 
