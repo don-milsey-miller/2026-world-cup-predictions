@@ -46,10 +46,10 @@ the model result as correct or incorrect.
 
 | Match | Win A | Draw | Win B | Model lean | Winner | Correct? |
 | --- | ---: | ---: | ---: | --- | --- | --- |
-| Qatar vs Switzerland | 14.2% | 19.3% | 66.5% | Switzerland | Draw | Incorrect |
-| Brazil vs Morocco | 39.6% | 26.2% | 34.2% | Brazil | Draw | Incorrect |
-| Haiti vs Scotland | 24.7% | 27.8% | 47.5% | Scotland | Scotland | Correct |
-| Australia vs Türkiye | 27.7% | 29.1% | 43.1% | Türkiye | Australia | Incorrect |
+| Qatar vs Switzerland | 14.2% | 19.3% | 66.5% | Switzerland | Draw | ❌ |
+| Brazil vs Morocco | 39.6% | 26.2% | 34.2% | Brazil | Draw | ❌ |
+| Haiti vs Scotland | 24.7% | 27.8% | 47.5% | Scotland | Scotland | ✅ |
+| Australia vs Türkiye | 27.7% | 29.1% | 43.1% | Türkiye | Australia | ❌ |
 
 ### June 14, 2026
 
