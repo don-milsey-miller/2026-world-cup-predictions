@@ -36,16 +36,30 @@ scores become available only after the upstream data source adds match results.
 
 ## World Cup Predictions
 
-Generated on **June 12, 2026** with model `hgb_iter80_lr0.03_l20`, trained on
+Generated on **June 14, 2026** with model `hgb_iter80_lr0.03_l20`, trained on
 completed matches through **June 11, 2026**. Probabilities are informational and
 are not betting advice. Daily predictions should be generated the night before
 the scheduled matches. After final scores are known, update `Winner` and mark
-the model result as `✅` for correct or `❌` for incorrect.
+the model result as correct or incorrect.
 
-| Match | Venue | Win A | Draw | Win B | Model lean | Winner | Correct? |
-| --- | --- | ---: | ---: | ---: | --- | --- | --- |
-| Canada vs Bosnia and Herzegovina | Toronto, Canada | 66.2% | 23.8% | 10.0% | Canada | TBD | Pending |
-| United States vs Paraguay | Inglewood, United States | 48.6% | 31.3% | 20.1% | United States | TBD | Pending |
+### June 13, 2026
+
+| Match | Win A | Draw | Win B | Model lean | Winner | Correct? |
+| --- | ---: | ---: | ---: | --- | --- | --- |
+| Qatar vs Switzerland | 14.2% | 19.3% | 66.5% | Switzerland | TBD | Pending |
+| Brazil vs Morocco | 39.6% | 26.2% | 34.2% | Brazil | TBD | Pending |
+| Haiti vs Scotland | 24.7% | 27.8% | 47.5% | Scotland | TBD | Pending |
+| Australia vs Türkiye | 27.7% | 29.1% | 43.1% | Türkiye | TBD | Pending |
+
+### June 14, 2026
+
+| Match | Win A | Draw | Win B | Model lean | Winner | Correct? |
+| --- | ---: | ---: | ---: | --- | --- | --- |
+| Australia vs Türkiye | 27.7% | 29.1% | 43.1% | Türkiye | TBD | Pending |
+| Germany vs Curaçao | 90.3% | 7.2% | 2.5% | Germany | TBD | Pending |
+| Netherlands vs Japan | 35.4% | 30.1% | 34.4% | Netherlands | TBD | Pending |
+| Ivory Coast vs Ecuador | 22.3% | 29.1% | 48.6% | Ecuador | TBD | Pending |
+| Sweden vs Tunisia | 52.0% | 25.7% | 22.3% | Sweden | TBD | Pending |
 
 ## Data
 
