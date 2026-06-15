@@ -58,7 +58,7 @@ the model result as correct or incorrect.
 | Germany vs Curaçao | 90.3% | 7.2% | 2.5% | Germany | Germany | ✅ |
 | Netherlands vs Japan | 35.4% | 30.1% | 34.4% | Netherlands | Draw | ❌ |
 | Ivory Coast vs Ecuador | 22.3% | 29.1% | 48.6% | Ecuador | Draw | ❌ |
-| Sweden vs Tunisia | 52.0% | 25.7% | 22.3% | Sweden | TBD | Pending |
+| Sweden vs Tunisia | 52.0% | 25.7% | 22.3% | Sweden | Sweden | ✅ |
 
 ### June 15, 2026
 
@@ -79,7 +79,7 @@ the model result as correct or incorrect.
 
 ## Model Accuracy
 
-Current accuracy on completed tracked predictions: **28.6%** (2 correct out of 7).
+Current accuracy on completed tracked predictions: **37.5%** (3 correct out of 8).
 
 ## Data
 
