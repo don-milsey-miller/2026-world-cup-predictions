@@ -60,6 +60,15 @@ the model result as correct or incorrect.
 | Ivory Coast vs Ecuador | 22.3% | 29.1% | 48.6% | Ecuador | Draw | ❌ |
 | Sweden vs Tunisia | 52.0% | 25.7% | 22.3% | Sweden | TBD | Pending |
 
+### June 15, 2026
+
+| Match | Win A | Draw | Win B | Model lean | Winner | Correct? |
+| --- | ---: | ---: | ---: | --- | --- | --- |
+| Spain vs Cape Verde | 80.4% | 15.7% | 3.9% | Spain | TBD | Pending |
+| Belgium vs Egypt | 58.0% | 24.1% | 17.9% | Belgium | TBD | Pending |
+| Saudi Arabia vs Uruguay | 16.6% | 25.0% | 58.4% | Uruguay | TBD | Pending |
+| Iran vs New Zealand | 67.9% | 18.9% | 13.2% | Iran | TBD | Pending |
+
 ### June 16, 2026
 
 | Match | Win A | Draw | Win B | Model lean | Winner | Correct? |
@@ -67,7 +76,6 @@ the model result as correct or incorrect.
 | France vs Senegal | 66.7% | 21.7% | 11.6% | France | TBD | Pending |
 | Iraq vs Norway | 24.3% | 27.2% | 48.6% | Norway | TBD | Pending |
 | Argentina vs Algeria | 68.2% | 22.8% | 9.1% | Argentina | TBD | Pending |
-| Austria vs Jordan | 66.3% | 21.9% | 11.8% | Austria | TBD | Pending |
 
 ## Model Accuracy
 
