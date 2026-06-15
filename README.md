@@ -60,6 +60,15 @@ the model result as correct or incorrect.
 | Ivory Coast vs Ecuador | 22.3% | 29.1% | 48.6% | Ecuador | Draw | ❌ |
 | Sweden vs Tunisia | 52.0% | 25.7% | 22.3% | Sweden | TBD | Pending |
 
+### June 16, 2026
+
+| Match | Win A | Draw | Win B | Model lean | Winner | Correct? |
+| --- | ---: | ---: | ---: | --- | --- | --- |
+| France vs Senegal | 66.7% | 21.7% | 11.6% | France | TBD | Pending |
+| Iraq vs Norway | 24.3% | 27.2% | 48.6% | Norway | TBD | Pending |
+| Argentina vs Algeria | 68.2% | 22.8% | 9.1% | Argentina | TBD | Pending |
+| Austria vs Jordan | 66.3% | 21.9% | 11.8% | Austria | TBD | Pending |
+
 ## Model Accuracy
 
 Current accuracy on completed tracked predictions: **28.6%** (2 correct out of 7).
