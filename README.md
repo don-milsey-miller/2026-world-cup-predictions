@@ -45,12 +45,13 @@ the model result as correct or incorrect.
 Interpretation notes:
 
 - `Model lean` is the highest-probability outcome.
+- `Team A` is the first country listed in `Match`; `Team B` is the second country.
 - `Draw risk` is `High` when the draw probability is at least 25.0%.
 - `Note` marks `Low-confidence lean` when the top probability is below 45.0%.
 
 ### June 13, 2026
 
-| Match | Win A | Draw | Win B | Model lean | Draw risk | Note | Winner | Correct? |
+| Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
 | --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
 | Qatar vs Switzerland | 14.2% | 19.3% | 66.5% | Switzerland | Normal |  | Draw | ❌ |
 | Brazil vs Morocco | 39.6% | 26.2% | 34.2% | Brazil | High | Low-confidence lean | Draw | ❌ |
@@ -58,7 +59,7 @@ Interpretation notes:
 
 ### June 14, 2026
 
-| Match | Win A | Draw | Win B | Model lean | Draw risk | Note | Winner | Correct? |
+| Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
 | --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
 | Australia vs Türkiye | 27.7% | 29.1% | 43.1% | Türkiye | High | Low-confidence lean | Australia | ❌ |
 | Germany vs Curaçao | 90.3% | 7.2% | 2.5% | Germany | Normal |  | Germany | ✅ |
@@ -68,7 +69,7 @@ Interpretation notes:
 
 ### June 15, 2026
 
-| Match | Win A | Draw | Win B | Model lean | Draw risk | Note | Winner | Correct? |
+| Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
 | --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
 | Spain vs Cape Verde | 80.4% | 15.7% | 3.9% | Spain | Normal |  | Draw | ❌ |
 | Belgium vs Egypt | 58.0% | 24.1% | 17.9% | Belgium | Normal |  | Draw | ❌ |
@@ -77,7 +78,7 @@ Interpretation notes:
 
 ### June 16, 2026
 
-| Match | Win A | Draw | Win B | Model lean | Draw risk | Note | Winner | Correct? |
+| Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
 | --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
 | France vs Senegal | 66.7% | 21.7% | 11.6% | France | Normal |  | TBD | Pending |
 | Iraq vs Norway | 24.3% | 27.2% | 48.6% | Norway | High |  | TBD | Pending |
