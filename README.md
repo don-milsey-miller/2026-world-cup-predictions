@@ -54,6 +54,7 @@ the model result as correct or incorrect.
 
 | Match | Win A | Draw | Win B | Model lean | Winner | Correct? |
 | --- | ---: | ---: | ---: | --- | --- | --- |
+| Australia vs Türkiye | 27.7% | 29.1% | 43.1% | Türkiye | Australia | ❌ |
 | Germany vs Curaçao | 90.3% | 7.2% | 2.5% | Germany | Germany | ✅ |
 | Netherlands vs Japan | 35.4% | 30.1% | 34.4% | Netherlands | Draw | ❌ |
 | Ivory Coast vs Ecuador | 22.3% | 29.1% | 48.6% | Ecuador | Draw | ❌ |
@@ -63,7 +64,6 @@ the model result as correct or incorrect.
 
 | Match | Win A | Draw | Win B | Model lean | Winner | Correct? |
 | --- | ---: | ---: | ---: | --- | --- | --- |
-| Australia vs Türkiye | 27.7% | 29.1% | 43.1% | Türkiye | Australia | ❌ |
 | Spain vs Cape Verde | 80.4% | 15.7% | 3.9% | Spain | TBD | Pending |
 | Belgium vs Egypt | 58.0% | 24.1% | 17.9% | Belgium | TBD | Pending |
 | Saudi Arabia vs Uruguay | 16.6% | 25.0% | 58.4% | Uruguay | TBD | Pending |
