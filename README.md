@@ -42,40 +42,46 @@ are not betting advice. Daily predictions should be generated the night before
 the scheduled matches. After final scores are known, update `Winner` and mark
 the model result as correct or incorrect.
 
+Interpretation notes:
+
+- `Model lean` is the highest-probability outcome.
+- `Draw risk` is `High` when the draw probability is at least 25.0%.
+- `Note` marks `Low-confidence lean` when the top probability is below 45.0%.
+
 ### June 13, 2026
 
-| Match | Win A | Draw | Win B | Model lean | Winner | Correct? |
-| --- | ---: | ---: | ---: | --- | --- | --- |
-| Qatar vs Switzerland | 14.2% | 19.3% | 66.5% | Switzerland | Draw | ❌ |
-| Brazil vs Morocco | 39.6% | 26.2% | 34.2% | Brazil | Draw | ❌ |
-| Haiti vs Scotland | 24.7% | 27.8% | 47.5% | Scotland | Scotland | ✅ |
+| Match | Win A | Draw | Win B | Model lean | Draw risk | Note | Winner | Correct? |
+| --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
+| Qatar vs Switzerland | 14.2% | 19.3% | 66.5% | Switzerland | Normal |  | Draw | ❌ |
+| Brazil vs Morocco | 39.6% | 26.2% | 34.2% | Brazil | High | Low-confidence lean | Draw | ❌ |
+| Haiti vs Scotland | 24.7% | 27.8% | 47.5% | Scotland | High |  | Scotland | ✅ |
 
 ### June 14, 2026
 
-| Match | Win A | Draw | Win B | Model lean | Winner | Correct? |
-| --- | ---: | ---: | ---: | --- | --- | --- |
-| Australia vs Türkiye | 27.7% | 29.1% | 43.1% | Türkiye | Australia | ❌ |
-| Germany vs Curaçao | 90.3% | 7.2% | 2.5% | Germany | Germany | ✅ |
-| Netherlands vs Japan | 35.4% | 30.1% | 34.4% | Netherlands | Draw | ❌ |
-| Ivory Coast vs Ecuador | 22.3% | 29.1% | 48.6% | Ecuador | Draw | ❌ |
-| Sweden vs Tunisia | 52.0% | 25.7% | 22.3% | Sweden | Sweden | ✅ |
+| Match | Win A | Draw | Win B | Model lean | Draw risk | Note | Winner | Correct? |
+| --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
+| Australia vs Türkiye | 27.7% | 29.1% | 43.1% | Türkiye | High | Low-confidence lean | Australia | ❌ |
+| Germany vs Curaçao | 90.3% | 7.2% | 2.5% | Germany | Normal |  | Germany | ✅ |
+| Netherlands vs Japan | 35.4% | 30.1% | 34.4% | Netherlands | High | Low-confidence lean | Draw | ❌ |
+| Ivory Coast vs Ecuador | 22.3% | 29.1% | 48.6% | Ecuador | High |  | Draw | ❌ |
+| Sweden vs Tunisia | 52.0% | 25.7% | 22.3% | Sweden | High |  | Sweden | ✅ |
 
 ### June 15, 2026
 
-| Match | Win A | Draw | Win B | Model lean | Winner | Correct? |
-| --- | ---: | ---: | ---: | --- | --- | --- |
-| Spain vs Cape Verde | 80.4% | 15.7% | 3.9% | Spain | Draw | ❌ |
-| Belgium vs Egypt | 58.0% | 24.1% | 17.9% | Belgium | Draw | ❌ |
-| Saudi Arabia vs Uruguay | 16.6% | 25.0% | 58.4% | Uruguay | TBD | Pending |
-| Iran vs New Zealand | 67.9% | 18.9% | 13.2% | Iran | TBD | Pending |
+| Match | Win A | Draw | Win B | Model lean | Draw risk | Note | Winner | Correct? |
+| --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
+| Spain vs Cape Verde | 80.4% | 15.7% | 3.9% | Spain | Normal |  | Draw | ❌ |
+| Belgium vs Egypt | 58.0% | 24.1% | 17.9% | Belgium | Normal |  | Draw | ❌ |
+| Saudi Arabia vs Uruguay | 16.6% | 25.0% | 58.4% | Uruguay | High |  | TBD | Pending |
+| Iran vs New Zealand | 67.9% | 18.9% | 13.2% | Iran | Normal |  | TBD | Pending |
 
 ### June 16, 2026
 
-| Match | Win A | Draw | Win B | Model lean | Winner | Correct? |
-| --- | ---: | ---: | ---: | --- | --- | --- |
-| France vs Senegal | 66.7% | 21.7% | 11.6% | France | TBD | Pending |
-| Iraq vs Norway | 24.3% | 27.2% | 48.6% | Norway | TBD | Pending |
-| Argentina vs Algeria | 68.2% | 22.8% | 9.1% | Argentina | TBD | Pending |
+| Match | Win A | Draw | Win B | Model lean | Draw risk | Note | Winner | Correct? |
+| --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
+| France vs Senegal | 66.7% | 21.7% | 11.6% | France | Normal |  | TBD | Pending |
+| Iraq vs Norway | 24.3% | 27.2% | 48.6% | Norway | High |  | TBD | Pending |
+| Argentina vs Algeria | 68.2% | 22.8% | 9.1% | Argentina | Normal |  | TBD | Pending |
 
 ## Model Accuracy
 
