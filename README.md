@@ -80,13 +80,13 @@ Interpretation notes:
 
 | Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
 | --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
-| France vs Senegal | 66.7% | 21.7% | 11.6% | France | Normal |  | TBD | Pending |
-| Iraq vs Norway | 24.3% | 27.2% | 48.6% | Norway | High |  | TBD | Pending |
+| France vs Senegal | 66.7% | 21.7% | 11.6% | France | Normal |  | France | ✅ |
+| Iraq vs Norway | 24.3% | 27.2% | 48.6% | Norway | High |  | Norway | ✅ |
 | Argentina vs Algeria | 68.2% | 22.8% | 9.1% | Argentina | Normal |  | TBD | Pending |
 
 ## Model Accuracy
 
-Current accuracy on completed tracked predictions: **30.0%** (3 correct out of 10).
+Current accuracy on completed tracked predictions: **41.7%** (5 correct out of 12).
 
 ## Data
 
