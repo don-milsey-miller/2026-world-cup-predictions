@@ -88,7 +88,7 @@ Interpretation notes:
 
 | Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
 | --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
-| Austria vs Jordan | 66.3% | 21.9% | 11.8% | Austria | Normal |  | TBD | Pending |
+| Austria vs Jordan | 66.3% | 21.9% | 11.8% | Austria | Normal |  | Austria | Yes |
 | Portugal vs DR Congo | 70.6% | 22.7% | 6.7% | Portugal | Normal |  | TBD | Pending |
 | England vs Croatia | 45.6% | 24.4% | 30.0% | England | Normal |  | TBD | Pending |
 | Ghana vs Panama | 26.0% | 25.9% | 48.1% | Panama | High |  | TBD | Pending |
@@ -96,7 +96,7 @@ Interpretation notes:
 
 ## Model Accuracy
 
-Current accuracy on completed tracked predictions: **40.0%** (6 correct out of 15).
+Current accuracy on completed tracked predictions: **43.8%** (7 correct out of 16).
 
 ## Data
 
