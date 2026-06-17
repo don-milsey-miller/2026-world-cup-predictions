@@ -1,6 +1,6 @@
 # World Cup Match Predictor
 
-Predict men’s senior international soccer match outcomes from two team names. The app trains on public international results, exports a model artifact, exposes a FastAPI API, and serves a small single-page frontend.
+Predict men's senior international soccer match outcomes from two team names. The app trains on public international results, exports a model artifact, exposes a FastAPI API, and serves a small single-page frontend.
 
 The predictions are informational and are not betting advice.
 
@@ -36,7 +36,7 @@ scores become available only after the upstream data source adds match results.
 
 ## World Cup Predictions
 
-Generated on **June 14, 2026** with model `hgb_iter80_lr0.03_l20`, trained on
+Latest generated on **June 17, 2026** with model `hgb_iter80_lr0.03_l20`, trained on
 completed matches through **June 11, 2026**. Probabilities are informational and
 are not betting advice. Daily predictions should be generated the night before
 the scheduled matches. After final scores are known, update `Winner` and mark
@@ -53,44 +53,54 @@ Interpretation notes:
 
 | Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
 | --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
-| Qatar vs Switzerland | 14.2% | 19.3% | 66.5% | Switzerland | Normal |  | Draw | ❌ |
-| Brazil vs Morocco | 39.6% | 26.2% | 34.2% | Brazil | High | Low-confidence lean | Draw | ❌ |
-| Haiti vs Scotland | 24.7% | 27.8% | 47.5% | Scotland | High |  | Scotland | ✅ |
+| Qatar vs Switzerland | 14.2% | 19.3% | 66.5% | Switzerland | Normal |  | Draw | No |
+| Brazil vs Morocco | 39.6% | 26.2% | 34.2% | Brazil | High | Low-confidence lean | Draw | No |
+| Haiti vs Scotland | 24.7% | 27.8% | 47.5% | Scotland | High |  | Scotland | Yes |
 
 ### June 14, 2026
 
 | Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
 | --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
-| Australia vs Türkiye | 27.7% | 29.1% | 43.1% | Türkiye | High | Low-confidence lean | Australia | ❌ |
-| Germany vs Curaçao | 90.3% | 7.2% | 2.5% | Germany | Normal |  | Germany | ✅ |
-| Netherlands vs Japan | 35.4% | 30.1% | 34.4% | Netherlands | High | Low-confidence lean | Draw | ❌ |
-| Ivory Coast vs Ecuador | 22.3% | 29.1% | 48.6% | Ecuador | High |  | Draw | ❌ |
-| Sweden vs Tunisia | 52.0% | 25.7% | 22.3% | Sweden | High |  | Sweden | ✅ |
+| Australia vs Turkiye | 27.7% | 29.1% | 43.1% | Turkiye | High | Low-confidence lean | Australia | No |
+| Germany vs Curacao | 90.3% | 7.2% | 2.5% | Germany | Normal |  | Germany | Yes |
+| Netherlands vs Japan | 35.4% | 30.1% | 34.4% | Netherlands | High | Low-confidence lean | Draw | No |
+| Ivory Coast vs Ecuador | 22.3% | 29.1% | 48.6% | Ecuador | High |  | Draw | No |
+| Sweden vs Tunisia | 52.0% | 25.7% | 22.3% | Sweden | High |  | Sweden | Yes |
 
 ### June 15, 2026
 
 | Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
 | --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
-| Spain vs Cape Verde | 80.4% | 15.7% | 3.9% | Spain | Normal |  | Draw | ❌ |
-| Belgium vs Egypt | 58.0% | 24.1% | 17.9% | Belgium | Normal |  | Draw | ❌ |
-| Saudi Arabia vs Uruguay | 16.6% | 25.0% | 58.4% | Uruguay | High |  | Draw | ❌ |
-| Iran vs New Zealand | 67.9% | 18.9% | 13.2% | Iran | Normal |  | New Zealand | ❌ |
+| Spain vs Cape Verde | 80.4% | 15.7% | 3.9% | Spain | Normal |  | Draw | No |
+| Belgium vs Egypt | 58.0% | 24.1% | 17.9% | Belgium | Normal |  | Draw | No |
+| Saudi Arabia vs Uruguay | 16.6% | 25.0% | 58.4% | Uruguay | High |  | Draw | No |
+| Iran vs New Zealand | 67.9% | 18.9% | 13.2% | Iran | Normal |  | New Zealand | No |
 
 ### June 16, 2026
 
 | Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
 | --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
-| France vs Senegal | 66.7% | 21.7% | 11.6% | France | Normal |  | France | ✅ |
-| Iraq vs Norway | 24.3% | 27.2% | 48.6% | Norway | High |  | Norway | ✅ |
-| Argentina vs Algeria | 68.2% | 22.8% | 9.1% | Argentina | Normal |  | TBD | Pending |
+| France vs Senegal | 66.7% | 21.7% | 11.6% | France | Normal |  | France | Yes |
+| Iraq vs Norway | 24.3% | 27.2% | 48.6% | Norway | High |  | Norway | Yes |
+| Argentina vs Algeria | 68.2% | 22.8% | 9.1% | Argentina | Normal |  | Argentina | Yes |
+
+### June 17, 2026
+
+| Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
+| --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
+| Austria vs Jordan | 66.3% | 21.9% | 11.8% | Austria | Normal |  | TBD | Pending |
+| Portugal vs DR Congo | 70.6% | 22.7% | 6.7% | Portugal | Normal |  | TBD | Pending |
+| England vs Croatia | 45.6% | 24.4% | 30.0% | England | Normal |  | TBD | Pending |
+| Ghana vs Panama | 26.0% | 25.9% | 48.1% | Panama | High |  | TBD | Pending |
+| Uzbekistan vs Colombia | 17.9% | 22.4% | 59.7% | Colombia | Normal |  | TBD | Pending |
 
 ## Model Accuracy
 
-Current accuracy on completed tracked predictions: **35.7%** (5 correct out of 14).
+Current accuracy on completed tracked predictions: **40.0%** (6 correct out of 15).
 
 ## Data
 
-Primary data source: [martj42/international_results](https://github.com/martj42/international_results), a CC0 dataset of men’s full international football results. The training pipeline uses `results.csv`; shootout data is downloaded for future extensions but v1 predicts the full-time/extra-time result class: team A win, draw, or team B win.
+Primary data source: [martj42/international_results](https://github.com/martj42/international_results), a CC0 dataset of men's full international football results. The training pipeline uses `results.csv`; shootout data is downloaded for future extensions but v1 predicts the full-time/extra-time result class: team A win, draw, or team B win.
 
 ## Local Setup
 
