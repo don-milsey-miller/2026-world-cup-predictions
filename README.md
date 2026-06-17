@@ -74,7 +74,7 @@ Interpretation notes:
 | Spain vs Cape Verde | 80.4% | 15.7% | 3.9% | Spain | Normal |  | Draw | ❌ |
 | Belgium vs Egypt | 58.0% | 24.1% | 17.9% | Belgium | Normal |  | Draw | ❌ |
 | Saudi Arabia vs Uruguay | 16.6% | 25.0% | 58.4% | Uruguay | High |  | Draw | ❌ |
-| Iran vs New Zealand | 67.9% | 18.9% | 13.2% | Iran | Normal |  | Draw | ❌ |
+| Iran vs New Zealand | 67.9% | 18.9% | 13.2% | Iran | Normal |  | New Zealand | ❌ |
 
 ### June 16, 2026
 
