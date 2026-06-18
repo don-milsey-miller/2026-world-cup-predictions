@@ -49,6 +49,12 @@ Interpretation notes:
 - `Draw risk` is `High` when the draw probability is at least 25.0%.
 - `Note` marks `Low-confidence lean` when the top probability is below 45.0%.
 
+### June 11, 2026
+Project wasn't even a thought.
+
+### June 12, 2026
+Project researched, designed, and trained. Predictions were not recorded.
+
 ### June 13, 2026
 
 | Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
@@ -89,14 +95,23 @@ Interpretation notes:
 | Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
 | --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
 | Austria vs Jordan | 66.3% | 21.9% | 11.8% | Austria | Normal |  | Austria | Yes |
-| Portugal vs DR Congo | 70.6% | 22.7% | 6.7% | Portugal | Normal |  | TBD | Pending |
-| England vs Croatia | 45.6% | 24.4% | 30.0% | England | Normal |  | TBD | Pending |
-| Ghana vs Panama | 26.0% | 25.9% | 48.1% | Panama | High |  | TBD | Pending |
-| Uzbekistan vs Colombia | 17.9% | 22.4% | 59.7% | Colombia | Normal |  | TBD | Pending |
+| Portugal vs DR Congo | 70.6% | 22.7% | 6.7% | Portugal | Normal |  | Draw | No |
+| England vs Croatia | 45.6% | 24.4% | 30.0% | England | Normal |  | England | Yes |
+| Ghana vs Panama | 26.0% | 25.9% | 48.1% | Panama | High |  | Ghana | No |
+| Uzbekistan vs Colombia | 17.9% | 22.4% | 59.7% | Colombia | Normal |  | Colombia | Yes |
+
+### June 18, 2026
+
+| Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
+| --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
+| Czechia vs South Africa | 57.1% | 24.3% | 18.7% | Czechia | Normal |  | TBD | Pending |
+| Switzerland vs Bosnia and Herzegovina | 72.9% | 17.6% | 9.6% | Switzerland | Normal |  | TBD | Pending |
+| Canada vs Qatar | 75.4% | 15.9% | 8.7% | Canada | Normal |  | TBD | Pending |
+| Mexico vs South Korea | 43.0% | 32.7% | 24.3% | Mexico | High | Low-confidence lean | TBD | Pending |
 
 ## Model Accuracy
 
-Current accuracy on completed tracked predictions: **43.8%** (7 correct out of 16).
+Current accuracy on completed tracked predictions: **45.0%** (9 correct out of 20).
 
 ## Data
 
