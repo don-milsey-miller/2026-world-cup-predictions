@@ -36,7 +36,7 @@ scores become available only after the upstream data source adds match results.
 
 ## World Cup Predictions
 
-Latest generated on **June 17, 2026** with model `hgb_iter80_lr0.03_l20`, trained on
+Latest generated on **June 19, 2026** with model `hgb_iter80_lr0.03_l20`, trained on
 completed matches through **June 11, 2026**. Probabilities are informational and
 are not betting advice. Daily predictions should be generated the night before
 the scheduled matches. After final scores are known, update `Winner` and mark
@@ -104,14 +104,23 @@ Project researched, designed, and trained. Predictions were not recorded.
 
 | Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
 | --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
-| Czechia vs South Africa | 57.1% | 24.3% | 18.7% | Czechia | Normal |  | TBD | Pending |
-| Switzerland vs Bosnia and Herzegovina | 72.9% | 17.6% | 9.6% | Switzerland | Normal |  | TBD | Pending |
-| Canada vs Qatar | 75.4% | 15.9% | 8.7% | Canada | Normal |  | TBD | Pending |
-| Mexico vs South Korea | 43.0% | 32.7% | 24.3% | Mexico | High | Low-confidence lean | TBD | Pending |
+| Czechia vs South Africa | 57.1% | 24.3% | 18.7% | Czechia | Normal |  | Draw | No |
+| Switzerland vs Bosnia and Herzegovina | 72.9% | 17.6% | 9.6% | Switzerland | Normal |  | Switzerland | Yes |
+| Canada vs Qatar | 75.4% | 15.9% | 8.7% | Canada | Normal |  | Canada | Yes |
+| Mexico vs South Korea | 43.0% | 32.7% | 24.3% | Mexico | High | Low-confidence lean | Mexico | Yes |
+
+### June 19, 2026
+
+| Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
+| --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
+| United States vs Australia | 39.3% | 32.1% | 28.6% | United States | High | Low-confidence lean | TBD | Pending |
+| Scotland vs Morocco | 22.4% | 26.9% | 50.6% | Morocco | High |  | TBD | Pending |
+| Brazil vs Haiti | 80.8% | 15.2% | 4.0% | Brazil | Normal |  | TBD | Pending |
+| Turkiye vs Paraguay | 44.9% | 29.8% | 25.3% | Turkiye | High | Low-confidence lean | TBD | Pending |
 
 ## Model Accuracy
 
-Current accuracy on completed tracked predictions: **45.0%** (9 correct out of 20).
+Current accuracy on completed tracked predictions: **50.0%** (12 correct out of 24).
 
 ## Data
 
