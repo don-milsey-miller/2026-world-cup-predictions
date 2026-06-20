@@ -36,7 +36,7 @@ scores become available only after the upstream data source adds match results.
 
 ## World Cup Predictions
 
-Latest generated on **June 19, 2026** with model `hgb_iter80_lr0.03_l20`, trained on
+Latest generated on **June 20, 2026** with model `hgb_iter80_lr0.03_l20`, trained on
 completed matches through **June 11, 2026**. Probabilities are informational and
 are not betting advice. Daily predictions should be generated the night before
 the scheduled matches. After final scores are known, update `Winner` and mark
@@ -113,14 +113,23 @@ Project researched, designed, and trained. Predictions were not recorded.
 
 | Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
 | --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
-| United States vs Australia | 39.3% | 32.1% | 28.6% | United States | High | Low-confidence lean | TBD | Pending |
-| Scotland vs Morocco | 22.4% | 26.9% | 50.6% | Morocco | High |  | TBD | Pending |
-| Brazil vs Haiti | 80.8% | 15.2% | 4.0% | Brazil | Normal |  | TBD | Pending |
-| Turkiye vs Paraguay | 44.9% | 29.8% | 25.3% | Turkiye | High | Low-confidence lean | TBD | Pending |
+| United States vs Australia | 39.3% | 32.1% | 28.6% | United States | High | Low-confidence lean | United States | Yes |
+| Scotland vs Morocco | 22.4% | 26.9% | 50.6% | Morocco | High |  | Morocco | Yes |
+| Brazil vs Haiti | 80.8% | 15.2% | 4.0% | Brazil | Normal |  | Brazil | Yes |
+| Turkiye vs Paraguay | 44.9% | 29.8% | 25.3% | Turkiye | High | Low-confidence lean | Paraguay | No |
+
+### June 20, 2026
+
+| Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
+| --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
+| Netherlands vs Sweden | 62.1% | 25.7% | 12.2% | Netherlands | High |  | Netherlands | Yes |
+| Germany vs Ivory Coast | 64.7% | 22.3% | 13.0% | Germany | Normal |  | Germany | Yes |
+| Ecuador vs Curacao | 87.6% | 9.7% | 2.7% | Ecuador | Normal |  | TBD | Pending |
+| Tunisia vs Japan | 11.6% | 19.3% | 69.1% | Japan | Normal |  | TBD | Pending |
 
 ## Model Accuracy
 
-Current accuracy on completed tracked predictions: **50.0%** (12 correct out of 24).
+Current accuracy on completed tracked predictions: **56.7%** (17 correct out of 30).
 
 ## Data
 
