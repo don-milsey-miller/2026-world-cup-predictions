@@ -36,7 +36,7 @@ scores become available only after the upstream data source adds match results.
 
 ## World Cup Predictions
 
-Latest generated on **June 20, 2026** with model `hgb_iter80_lr0.03_l20`, trained on
+Latest generated on **June 21, 2026** with model `hgb_iter80_lr0.03_l20`, trained on
 completed matches through **June 11, 2026**. Probabilities are informational and
 are not betting advice. Daily predictions should be generated the night before
 the scheduled matches. After final scores are known, update `Winner` and mark
@@ -124,12 +124,21 @@ Project researched, designed, and trained. Predictions were not recorded.
 | --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
 | Netherlands vs Sweden | 62.1% | 25.7% | 12.2% | Netherlands | High |  | Netherlands | Yes |
 | Germany vs Ivory Coast | 64.7% | 22.3% | 13.0% | Germany | Normal |  | Germany | Yes |
-| Ecuador vs Curacao | 87.6% | 9.7% | 2.7% | Ecuador | Normal |  | TBD | Pending |
-| Tunisia vs Japan | 11.6% | 19.3% | 69.1% | Japan | Normal |  | TBD | Pending |
+| Ecuador vs Curacao | 87.6% | 9.7% | 2.7% | Ecuador | Normal |  | Draw | No |
+
+### June 21, 2026
+
+| Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
+| --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
+| Tunisia vs Japan | 11.6% | 19.3% | 69.1% | Japan | Normal |  | Japan | Yes |
+| Spain vs Saudi Arabia | 84.8% | 10.9% | 4.4% | Spain | Normal |  | TBD | Pending |
+| Belgium vs Iran | 52.2% | 24.2% | 23.5% | Belgium | Normal |  | TBD | Pending |
+| Uruguay vs Cape Verde | 71.0% | 19.9% | 9.1% | Uruguay | Normal |  | TBD | Pending |
+| New Zealand vs Egypt | 18.4% | 24.2% | 57.5% | Egypt | Normal |  | TBD | Pending |
 
 ## Model Accuracy
 
-Current accuracy on completed tracked predictions: **56.7%** (17 correct out of 30).
+Current accuracy on completed tracked predictions: **56.2%** (18 correct out of 32).
 
 ## Data
 
