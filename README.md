@@ -36,7 +36,7 @@ scores become available only after the upstream data source adds match results.
 
 ## World Cup Predictions
 
-Latest generated on **June 22, 2026** with model `hgb_iter80_lr0.03_l20`, trained on
+Latest generated on **June 23, 2026** with model `hgb_iter80_lr0.03_l20`, trained on
 completed matches through **June 11, 2026**. Probabilities are informational and
 are not betting advice. Daily predictions should be generated the night before
 the scheduled matches. After final scores are known, update `Winner` and mark
@@ -141,13 +141,22 @@ Project researched, designed, and trained. Predictions were not recorded.
 | Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
 | --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
 | Argentina vs Austria | 65.5% | 24.8% | 9.7% | Argentina | Normal |  | Argentina | Yes |
-| France vs Iraq | 71.7% | 21.3% | 7.0% | France | Normal |  | TBD | Pending |
-| Norway vs Senegal | 41.9% | 32.7% | 25.4% | Norway | High | Low-confidence lean | TBD | Pending |
-| Jordan vs Algeria | 18.7% | 22.5% | 58.8% | Algeria | Normal |  | TBD | Pending |
+| France vs Iraq | 71.7% | 21.3% | 7.0% | France | Normal |  | France | Yes |
+| Norway vs Senegal | 41.9% | 32.7% | 25.4% | Norway | High | Low-confidence lean | Norway | Yes |
+| Jordan vs Algeria | 18.7% | 22.5% | 58.8% | Algeria | Normal |  | Algeria | Yes |
+
+### June 23, 2026
+
+| Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
+| --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
+| Portugal vs Uzbekistan | 68.9% | 21.1% | 10.0% | Portugal | Normal |  | TBD | Pending |
+| England vs Ghana | 87.5% | 9.4% | 3.0% | England | Normal |  | TBD | Pending |
+| Panama vs Croatia | 22.0% | 28.1% | 50.0% | Croatia | High |  | TBD | Pending |
+| Colombia vs DR Congo | 70.5% | 20.6% | 8.9% | Colombia | Normal |  | TBD | Pending |
 
 ## Model Accuracy
 
-Current accuracy on completed tracked predictions: **57.9%** (22 correct out of 38).
+Current accuracy on completed tracked predictions: **61.0%** (25 correct out of 41).
 
 ## Data
 
