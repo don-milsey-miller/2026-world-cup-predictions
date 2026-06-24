@@ -1,6 +1,6 @@
 # World Cup Predictions
 
-Latest generated on **June 23, 2026** with model `hgb_iter80_lr0.03_l20`, trained on
+Latest generated on **June 24, 2026** with model `hgb_iter80_lr0.03_l20`, trained on
 completed matches through **June 11, 2026**. Probabilities are informational and
 are not betting advice. Daily predictions should be generated the night before
 the scheduled matches. After final scores are known, update `Winner` and mark
@@ -113,11 +113,22 @@ Project researched, designed, and trained. Predictions were not recorded.
 
 | Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
 | --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
-| Portugal vs Uzbekistan | 68.9% | 21.1% | 10.0% | Portugal | Normal |  | TBD | Pending |
-| England vs Ghana | 87.5% | 9.4% | 3.0% | England | Normal |  | TBD | Pending |
-| Panama vs Croatia | 22.0% | 28.1% | 50.0% | Croatia | High |  | TBD | Pending |
-| Colombia vs DR Congo | 70.5% | 20.6% | 8.9% | Colombia | Normal |  | TBD | Pending |
+| Portugal vs Uzbekistan | 68.9% | 21.1% | 10.0% | Portugal | Normal |  | Portugal | Yes |
+| England vs Ghana | 87.5% | 9.4% | 3.0% | England | Normal |  | Draw | No |
+| Panama vs Croatia | 22.0% | 28.1% | 50.0% | Croatia | High |  | Croatia | Yes |
+| Colombia vs DR Congo | 70.5% | 20.6% | 8.9% | Colombia | Normal |  | Colombia | Yes |
+
+## June 24, 2026
+
+| Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
+| --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
+| Bosnia and Herzegovina vs Qatar | 47.7% | 27.6% | 24.8% | Bosnia and Herzegovina | High |  | TBD | Pending |
+| Switzerland vs Canada | 42.0% | 31.4% | 26.7% | Switzerland | High | Low-confidence lean | TBD | Pending |
+| Morocco vs Haiti | 69.2% | 24.1% | 6.7% | Morocco | Normal |  | TBD | Pending |
+| Scotland vs Brazil | 22.1% | 8.8% | 69.1% | Brazil | Normal |  | TBD | Pending |
+| Czechia vs Mexico | 21.1% | 28.6% | 50.3% | Mexico | High |  | TBD | Pending |
+| South Africa vs South Korea | 19.4% | 22.5% | 58.1% | South Korea | Normal |  | TBD | Pending |
 
 ## Model Accuracy
 
-Current accuracy on completed tracked predictions: **61.0%** (25 correct out of 41).
+Current accuracy on completed tracked predictions: **62.2%** (28 correct out of 45).
