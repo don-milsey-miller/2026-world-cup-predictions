@@ -1,6 +1,6 @@
 # World Cup Predictions
 
-Latest generated on **June 24, 2026** with model `hgb_iter80_lr0.03_l20`, trained on
+Latest generated on **June 25, 2026** with model `hgb_iter80_lr0.03_l20`, trained on
 completed matches through **June 11, 2026**. Probabilities are informational and
 are not betting advice. Daily predictions should be generated the night before
 the scheduled matches. After final scores are known, update `Winner` and mark
@@ -122,13 +122,24 @@ Project researched, designed, and trained. Predictions were not recorded.
 
 | Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
 | --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
-| Bosnia and Herzegovina vs Qatar | 47.7% | 27.6% | 24.8% | Bosnia and Herzegovina | High |  | TBD | Pending |
-| Switzerland vs Canada | 42.0% | 31.4% | 26.7% | Switzerland | High | Low-confidence lean | TBD | Pending |
-| Morocco vs Haiti | 69.2% | 24.1% | 6.7% | Morocco | Normal |  | TBD | Pending |
-| Scotland vs Brazil | 22.1% | 8.8% | 69.1% | Brazil | Normal |  | TBD | Pending |
-| Czechia vs Mexico | 21.1% | 28.6% | 50.3% | Mexico | High |  | TBD | Pending |
-| South Africa vs South Korea | 19.4% | 22.5% | 58.1% | South Korea | Normal |  | TBD | Pending |
+| Bosnia and Herzegovina vs Qatar | 47.7% | 27.6% | 24.8% | Bosnia and Herzegovina | High |  | Bosnia and Herzegovina | Yes |
+| Switzerland vs Canada | 42.0% | 31.4% | 26.7% | Switzerland | High | Low-confidence lean | Switzerland | Yes |
+| Morocco vs Haiti | 69.2% | 24.1% | 6.7% | Morocco | Normal |  | Morocco | Yes |
+| Scotland vs Brazil | 22.1% | 8.8% | 69.1% | Brazil | Normal |  | Brazil | Yes |
+| Czechia vs Mexico | 21.1% | 28.6% | 50.3% | Mexico | High |  | Mexico | Yes |
+| South Africa vs South Korea | 19.4% | 22.5% | 58.1% | South Korea | Normal |  | South Africa | No |
+
+## June 25, 2026
+
+| Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
+| --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
+| Curacao vs Ivory Coast | 12.1% | 14.4% | 73.5% | Ivory Coast | Normal |  | TBD | Pending |
+| Ecuador vs Germany | 32.2% | 26.1% | 41.7% | Germany | High | Low-confidence lean | TBD | Pending |
+| Japan vs Sweden | 63.0% | 26.3% | 10.7% | Japan | High |  | TBD | Pending |
+| Tunisia vs Netherlands | 13.3% | 19.8% | 66.9% | Netherlands | Normal |  | TBD | Pending |
+| Paraguay vs Australia | 35.6% | 28.9% | 35.5% | Paraguay | High | Low-confidence lean | TBD | Pending |
+| Turkiye vs United States | 43.5% | 32.0% | 24.5% | Turkiye | High | Low-confidence lean | TBD | Pending |
 
 ## Model Accuracy
 
-Current accuracy on completed tracked predictions: **62.2%** (28 correct out of 45).
+Current accuracy on completed tracked predictions: **64.7%** (33 correct out of 51).

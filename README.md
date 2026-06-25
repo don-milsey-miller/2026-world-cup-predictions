@@ -39,9 +39,9 @@ scores become available only after the upstream data source adds match results.
 Daily prediction tables have moved to [predictions.md](predictions.md) to keep
 this README focused on the app and setup workflow.
 
-Latest generated on **June 24, 2026** with model `hgb_iter80_lr0.03_l20`.
-Current accuracy on completed tracked predictions: **62.2%** (28 correct out of
-45).
+Latest generated on **June 25, 2026** with model `hgb_iter80_lr0.03_l20`.
+Current accuracy on completed tracked predictions: **64.7%** (33 correct out of
+51).
 
 ## Data
 
