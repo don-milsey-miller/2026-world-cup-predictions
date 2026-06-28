@@ -1,6 +1,6 @@
 # World Cup Predictions
 
-Latest generated on **June 25, 2026** with model `hgb_iter80_lr0.03_l20`, trained on
+Latest generated on **June 28, 2026** with model `hgb_iter80_lr0.03_l20`, trained on
 completed matches through **June 11, 2026**. Probabilities are informational and
 are not betting advice. Daily predictions should be generated the night before
 the scheduled matches. After final scores are known, update `Winner` and mark
@@ -133,13 +133,41 @@ Project researched, designed, and trained. Predictions were not recorded.
 
 | Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
 | --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
-| Curacao vs Ivory Coast | 12.1% | 14.4% | 73.5% | Ivory Coast | Normal |  | TBD | Pending |
-| Ecuador vs Germany | 32.2% | 26.1% | 41.7% | Germany | High | Low-confidence lean | TBD | Pending |
-| Japan vs Sweden | 63.0% | 26.3% | 10.7% | Japan | High |  | TBD | Pending |
-| Tunisia vs Netherlands | 13.3% | 19.8% | 66.9% | Netherlands | Normal |  | TBD | Pending |
-| Paraguay vs Australia | 35.6% | 28.9% | 35.5% | Paraguay | High | Low-confidence lean | TBD | Pending |
-| Turkiye vs United States | 43.5% | 32.0% | 24.5% | Turkiye | High | Low-confidence lean | TBD | Pending |
+| Curacao vs Ivory Coast | 12.1% | 14.4% | 73.5% | Ivory Coast | Normal |  | Ivory Coast | Yes |
+| Ecuador vs Germany | 32.2% | 26.1% | 41.7% | Germany | High | Low-confidence lean | Ecuador | No |
+| Japan vs Sweden | 63.0% | 26.3% | 10.7% | Japan | High |  | Draw | No |
+| Tunisia vs Netherlands | 13.3% | 19.8% | 66.9% | Netherlands | Normal |  | Netherlands | Yes |
+| Paraguay vs Australia | 35.6% | 28.9% | 35.5% | Paraguay | High | Low-confidence lean | Draw | No |
+| Turkiye vs United States | 43.5% | 32.0% | 24.5% | Turkiye | High | Low-confidence lean | Turkiye | Yes |
+
+## June 26, 2026
+
+| Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
+| --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
+| Norway vs France | 27.6% | 21.2% | 51.2% | France | Normal |  | France | Yes |
+| Senegal vs Iraq | 50.8% | 29.6% | 19.6% | Senegal | High |  | Senegal | Yes |
+| Cape Verde vs Saudi Arabia | 29.6% | 30.9% | 39.5% | Saudi Arabia | High | Low-confidence lean | Draw | No |
+| Uruguay vs Spain | 17.4% | 16.3% | 66.3% | Spain | Normal |  | Spain | Yes |
+| Egypt vs Iran | 29.5% | 28.7% | 41.9% | Iran | High | Low-confidence lean | Draw | No |
+| New Zealand vs Belgium | 9.8% | 22.2% | 68.1% | Belgium | Normal |  | Belgium | Yes |
+
+## June 27, 2026
+
+| Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
+| --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
+| Croatia vs Ghana | 74.1% | 19.6% | 6.2% | Croatia | Normal |  | Croatia | Yes |
+| Panama vs England | 14.8% | 8.2% | 77.1% | England | Normal |  | England | Yes |
+| Colombia vs Portugal | 33.9% | 20.0% | 46.1% | Portugal | Normal |  | Draw | No |
+| DR Congo vs Uzbekistan | 27.7% | 30.9% | 41.4% | Uzbekistan | High | Low-confidence lean | DR Congo | No |
+| Algeria vs Austria | 38.7% | 28.5% | 32.9% | Algeria | High | Low-confidence lean | Draw | No |
+| Jordan vs Argentina | 6.0% | 7.2% | 86.8% | Argentina | Normal |  | Argentina | Yes |
+
+## June 28, 2026
+
+| Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
+| --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
+| South Africa vs Canada | 16.3% | 23.1% | 60.6% | Canada | Normal |  | TBD | Pending |
 
 ## Model Accuracy
 
-Current accuracy on completed tracked predictions: **64.7%** (33 correct out of 51).
+Current accuracy on completed tracked predictions: **62.3%** (43 correct out of 69).
