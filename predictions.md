@@ -1,6 +1,6 @@
 # World Cup Predictions
 
-Latest generated on **June 28, 2026** with model `hgb_iter80_lr0.03_l20`, trained on
+Latest generated on **June 29, 2026** with model `hgb_iter80_lr0.03_l20`, trained on
 completed matches through **June 11, 2026**. Probabilities are informational and
 are not betting advice. Daily predictions should be generated the night before
 the scheduled matches. After final scores are known, update `Winner` and mark
@@ -166,8 +166,16 @@ Project researched, designed, and trained. Predictions were not recorded.
 
 | Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
 | --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
-| South Africa vs Canada | 16.3% | 23.1% | 60.6% | Canada | Normal |  | TBD | Pending |
+| South Africa vs Canada | 16.3% | 23.1% | 60.6% | Canada | Normal |  | Canada | Yes |
+
+## June 29, 2026
+
+| Match | Team A | Draw | Team B | Model lean | Draw risk | Note | Winner | Correct? |
+| --- | ---: | ---: | ---: | --- | --- | --- | --- | --- |
+| Brazil vs Japan | 47.7% | 27.1% | 25.2% | Brazil | High |  | Brazil | Yes |
+| Germany vs Paraguay | 62.8% | 23.6% | 13.6% | Germany | Normal |  | TBD | Pending |
+| Netherlands vs Morocco | 38.2% | 26.9% | 34.9% | Netherlands | High | Low-confidence lean | TBD | Pending |
 
 ## Model Accuracy
 
-Current accuracy on completed tracked predictions: **62.3%** (43 correct out of 69).
+Current accuracy on completed tracked predictions: **63.4%** (45 correct out of 71).
