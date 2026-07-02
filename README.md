@@ -39,9 +39,11 @@ scores become available only after the upstream data source adds match results.
 Daily prediction tables have moved to [predictions.md](predictions.md) to keep
 this README focused on the app and setup workflow.
 
-Latest generated on **June 29, 2026** with model `hgb_iter80_lr0.03_l20`.
-Current accuracy on completed tracked predictions: **63.4%** (45 correct out of
-71).
+Latest generated on **July 2, 2026** with model `hgb_iter80_lr0.03_l20`.
+Today's tracked fixtures: Spain vs Austria, Portugal vs Croatia, and Switzerland
+vs Algeria.
+Current accuracy on completed tracked predictions: **62.8%** (49 correct out of
+78).
 
 ## Data
 
